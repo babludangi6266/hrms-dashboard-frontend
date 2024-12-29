@@ -1,0 +1,61 @@
+/* Dashboard CSS */
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 150px;
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  padding: 50px;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-top: 90px; 
+}
+
+.section {
+  margin-bottom: -10px; 
+}
+
+.section-heading {
+  font-size:22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.sidebar ul {
+  list-style: armenian;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  color: #01020c;
+}
+
+.sidebar ul li:hover {
+  color: #007bff;
+}
+
+.sidebar .icon {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover {
+  color: #01020c;
+  font-weight: bold;
+}
+
+/* Optional: Style the icons */
+.sidebar ul li .icon {
+  font-size: 18px; /* Adjust icon size */
+}
