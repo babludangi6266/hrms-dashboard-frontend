@@ -22,7 +22,7 @@ const Candidates = () => {
 
   const fetchCandidates = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/candidates");
+      const response = await axios.get("https://hrms-dasboard-backend.onrender.com/api/candidates");
       setCandidates(response.data);
     } catch (error) {
       console.error("Error fetching candidates:", error);
@@ -79,7 +79,7 @@ const Candidates = () => {
         status: "New",
       };
 
-      await axios.post("http://localhost:5000/api/candidates", candidateDetails);
+      await axios.post("https://hrms-dasboard-backend.onrender.com/api/candidates", candidateDetails);
 
       fetchCandidates();
       handleCloseModal();
@@ -98,7 +98,7 @@ const Candidates = () => {
         experience: candidate.experience,
       };
 
-      await axios.post("http://localhost:5000/api/employees", employeeDetails);
+      await axios.post("https://hrms-dasboard-backend.onrender.com/api/employees", employeeDetails);
 
       alert(`${candidate.fullName} has been saved as an employee.`);
     } catch (error) {
@@ -108,7 +108,7 @@ const Candidates = () => {
 
   const handleStatusChange = async (id, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/candidates/${id}`, { status });
+      await axios.put(`https://hrms-dasboard-backend.onrender.com/api/candidates/${id}`, { status });
       fetchCandidates();
     } catch (error) {
       console.error("Error updating status:", error);
@@ -117,7 +117,7 @@ const Candidates = () => {
 
   const handleDeleteCandidate = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/candidates/${id}`);
+      await axios.delete(`https://hrms-dasboard-backend.onrender.com/api/candidates/${id}`);
       fetchCandidates();
     } catch (error) {
       console.error("Error deleting candidate:", error);

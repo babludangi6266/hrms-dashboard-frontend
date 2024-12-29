@@ -17,7 +17,7 @@ const AttendanceComponent = () => {
 
   const fetchEmployees = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/employees");
+      const response = await axios.get("https://hrms-dasboard-backend.onrender.com/api/employees");
       setEmployees(response.data);
     } catch (error) {
       console.error("Error fetching employees:", error);
@@ -26,7 +26,7 @@ const AttendanceComponent = () => {
 
   const fetchAttendance = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/attendance");
+      const response = await axios.get("https://hrms-dasboard-backend.onrender.com/api/attendance");
       setAttendanceData(response.data);
     } catch (error) {
       console.error("Error fetching attendance:", error);
@@ -46,7 +46,7 @@ const AttendanceComponent = () => {
     try {
       const status = statusUpdates[employeeId] || "";
       const task = taskUpdates[employeeId] || "";
-      await axios.put(`http://localhost:5000/api/attendance/${employeeId}`, {
+      await axios.put(`https://hrms-dasboard-backend.onrender.com/api/attendance/${employeeId}`, {
         status,
         task,
       });

@@ -16,7 +16,7 @@ const EmployeeList = () => {
   // Fetch the employee list
   const fetchEmployees = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/employees");
+      const response = await axios.get("https://hrms-dasboard-backend.onrender.com/api/employees");
       setEmployees(response.data);
     } catch (error) {
       console.error("Error fetching employees:", error);
@@ -51,7 +51,7 @@ const EmployeeList = () => {
   const handleSave = async (updatedEmployee) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/employees/${updatedEmployee._id}`,
+        `https://hrms-dasboard-backend.onrender.com/api/employees/${updatedEmployee._id}`,
         updatedEmployee
       );
       console.log("Employee updated successfully.");
@@ -69,7 +69,7 @@ const EmployeeList = () => {
         "Are you sure you want to delete this employee?"
       );
       if (confirmDelete) {
-        await axios.delete(`http://localhost:5000/api/employees/${employeeId}`);
+        await axios.delete(`https://hrms-dasboard-backend.onrender.com/api/employees/${employeeId}`);
         console.log("Employee deleted successfully.");
         fetchEmployees(); // Refresh employee list after deletion
       }
